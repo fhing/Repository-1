@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/linear_layout"
+    android:id="@+id/relative_layout"
     >
 
     <TextView
@@ -19,7 +19,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btn_add"
-        android:layout_below="@+id/tv_msg"></ListView>
+        android:layout_below="@+id/tv_msg"
+        >
+
+    </ListView>
     <EditText
         android:id="@+id/et_box"
         android:layout_width="match_parent"

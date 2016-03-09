@@ -1,6 +1,7 @@
 package com.example.templar.tasklist;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
@@ -11,13 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
-public class MainActivity extends Activity implements View.OnKeyListener{
+public class MainActivity extends Activity implements View.OnClickListener{
 
 
     //@Override
@@ -35,12 +36,21 @@ public class MainActivity extends Activity implements View.OnKeyListener{
     public void onClick(View v)
     {
         if(v.getId() == btn_add.getId())
-            tv_msg.setText("Task added! ");
+        {
+            al_strings.add(et_box.getText().toString());
+
+            aa.notifyDataSetChanged();
+            //al_strings.add(et_box.getText().toString());
+        }
     }
 
     private Button btn_add;
     private TextView tv_msg;
     private EditText et_box;
+    ArrayList<String> al_strings;
+    ArrayAdapter<String> aa;
+    private boolean checked;
+    private CheckBox checkBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,22 +58,19 @@ public class MainActivity extends Activity implements View.OnKeyListener{
         setContentView(R.layout.activity_main);
 
         btn_add = (Button) findViewById(R.id.btn_add);
-        //btn_add.setOnClickListener(this);
+        btn_add.setOnClickListener(this);
         et_box = (EditText) findViewById(R.id.et_box);
         tv_msg = (TextView) findViewById(R.id.tv_msg);
-
-        et_box.setOnKeyListener(this);
+        checkBox = (CheckBox) findViewById(R.id.checkBox);
 
         ListView lv_mainlist = (ListView) findViewById(R.id.lv_mainlist);
-        ArrayList<String> al_strings = new ArrayList<String>();
-        ArrayAdapter<String> aa = new ArrayAdapter<String>(this,
+        al_strings = new ArrayList<String>();
+        aa = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, al_strings);
 // make the list view an observer of the array adapter.
         lv_mainlist.setAdapter(aa);
 // add in 3 strings to the array adapter and ask the list view to update itself
         al_strings.add("this is the first string");
-        al_strings.add("this is the second string");
-        al_strings.add("this is the third string");
         aa.notifyDataSetChanged();
         //tv_msg.setText(Click);
     }
