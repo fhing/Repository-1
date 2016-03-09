@@ -49,6 +49,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private EditText et_box;
     ArrayList<String> al_strings;
     ArrayAdapter<String> aa;
+    ListView lv_mainlist;
     private boolean checked;
     private CheckBox checkBox;
 
@@ -64,9 +65,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
         checkBox = (CheckBox) findViewById(R.id.checkBox);
 
         ListView lv_mainlist = (ListView) findViewById(R.id.lv_mainlist);
+        lv_mainlist.setChoiceMode(lv_mainlist.CHOICE_MODE_MULTIPLE);
         al_strings = new ArrayList<String>();
         aa = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, al_strings);
+
 // make the list view an observer of the array adapter.
         lv_mainlist.setAdapter(aa);
 // add in 3 strings to the array adapter and ask the list view to update itself
