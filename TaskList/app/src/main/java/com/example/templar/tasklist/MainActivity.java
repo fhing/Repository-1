@@ -24,7 +24,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     private ArrayList<c1> al_strings;
     private CustomAdaptater aa;
-    //Milestone 5
+    
     @Override
     public void onClick(View v)
     {
