@@ -24,7 +24,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     private ArrayList<c1> al_strings;
     private CustomAdaptater aa;
-    
+
     @Override
     public void onClick(View v)
     {
@@ -55,8 +55,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
         registerForContextMenu(lv_mainlist);
 
-        //Milestones 6
-        /*lv_mainlist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lv_mainlist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 if (parent == lv_mainlist) {
@@ -66,7 +65,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 }
                 return true;
             }
-        });*/
+        });
         aa.notifyDataSetChanged();
     }
 
