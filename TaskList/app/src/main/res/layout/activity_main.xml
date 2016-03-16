@@ -5,42 +5,31 @@
     android:orientation="vertical"
     android:id="@+id/relative_layout"
     >
-
-    <TextView
-        android:id="@+id/tv_msg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/hello_world"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
     <ListView
         android:id="@+id/lv_mainlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/btn_add"
         android:layout_below="@+id/tv_msg"
+        android:longClickable="true"
         >
-
     </ListView>
     <EditText
         android:id="@+id/et_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:hint="hello_world"
+        android:hint="task"
         android:inputType="text"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/btn_add" />
-
+        android:layout_alignParentStart="true" />
     <Button
         android:id="@+id/btn_add"
         android:layout_width="112dp"
         android:layout_height="wrap_content"
-        android:hint="button add"
+        android:hint="add task"
+        android:onClick="onClick"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
-
 </RelativeLayout>

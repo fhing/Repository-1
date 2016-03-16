@@ -5,22 +5,22 @@ package com.example.templar.tasklist;
  */
 public class c1 {
     String name;
-    int checked;
-    c1(String name, int value)
+    boolean checked;
+    c1(String name, boolean value)
     {
         this.name=name;
         this.checked=value;
     }
-    public int getChecked(){
+    public boolean getChecked(){
         return this.checked;
     }
-    public void setChecked(int value){
+    public void setChecked(boolean value){
         this.checked = value;
     }
     public String getName(){
         return this.name;
     }
-    public void setChecked(String name){
+    public void setName(String name){
         this.name = name;
     }
 }

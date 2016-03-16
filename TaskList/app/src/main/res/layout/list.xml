@@ -2,25 +2,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/linear_layout">
+    android:id="@+id/linear_layout"
+    android:longClickable="true">
 
     <TextView
         android:id="@+id/tv_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:longClickable="true"/>
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New CheckBox"
+        android:text=""
         android:id="@+id/checkBox"
-        android:checked="false"
-        android:layout_gravity="left"
-        android:layout_marginRight="10sp"
-        android:onClick="MyHandler"
-        />
+        android:longClickable="false"/>
+
 </LinearLayout>
